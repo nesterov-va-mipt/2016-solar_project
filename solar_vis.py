@@ -54,7 +54,7 @@ def scale_y(y):
     **y** — y-координата модели.
     """
 
-    return int(y*scale_factor) + window_height/2  # FIXME: not done yet
+    return int(y*scale_factor) + window_height // 2  # FIXME: not done yet
 
 
 def create_star_image(space, star):
@@ -106,9 +106,11 @@ def update_object_position(space, body):
     **space** — холст для рисования.
     **body** — тело, которое нужно переместить.
     """
+    
     x = scale_x(body.x)
     y = scale_y(body.y)
     r = body.R
+    #print(x, y)
     if x + r < 0 or x - r > window_width or y + r < 0 or y - r > window_height:
         space.coords(body.image, window_width + r, window_height + r,
                      window_width + 2*r, window_height + 2*r)  # положить за пределы окна
