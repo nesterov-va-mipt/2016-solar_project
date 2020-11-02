@@ -102,9 +102,9 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     with open(output_filename, 'w') as out_file:
         for obj in space_objects:
             if(type(obj) == "Star"):
-                print(out_file, "Star %f %s %f %f %f %f %f" % (obj.R, obj.color, obj.m, obj.x, obj.y, obj.Vx, obj.Vy))
+                print("Star %d %s %f %f %f %f %f" % (obj.R, obj.color, obj.m, obj.x, obj.y, obj.Vx, obj.Vy), file=out_file)
             else:
-                print(out_file, "Planet %f %s %f %f %f %f %f" % (obj.R, obj.color, obj.m, obj.x, obj.y, obj.Vx, obj.Vy))
+                print("Planet %d %s %f %f %f %f %f" % (obj.R, obj.color, obj.m, obj.x, obj.y, obj.Vx, obj.Vy), file=out_file)
 
 
 if __name__ == "__main__":
